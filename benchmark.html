@@ -7884,9 +7884,9 @@ Validation: 1309 runů
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="3.-C%C3%ADlov%C3%A1-prom%C4%9Bnn%C3%A1-a-metrika">3. Cílová proměnná a metrika<a class="anchor-link" href="#3.-C%C3%ADlov%C3%A1-prom%C4%9Bnn%C3%A1-a-metrika">¶</a></h2><p><strong>Cílová proměnná:</strong> <code>clear_time_ms</code>, skutečná doba průchodu dungeonem v milisekundách.</p>
-<p><strong>Hlavní metrika:</strong> RMSE (Root Mean Squared Error) přepočítaná na sekundy. Penalizuje velké odchylky více než MAE, což odpovídá povaze problému.</p>
-<p><strong>Vedlejší metrika:</strong> MAE (Mean Absolute Error) v sekundách, snáze interpretovatelná jako průměrná chyba predikce.</p>
-<p>Všechny benchmarky jsou vyhodnoceny <strong>pouze na validační sadě</strong>. Testovací sada nebyla použita.</p>
+<p><strong>Hlavní metrika:</strong> RMSE (Root Mean Squared Error) přepočítaná na sekundy. Penalizuje velké odchylky více než MAE.</p>
+<p><strong>Vedlejší metrika:</strong> MAE (Mean Absolute Error) v sekundách, průměrná chyba predikce.</p>
+<p>Všechny benchmarky jsou vyhodnoceny pouze na validační sadě. Testovací sada nebyla použita.</p>
 </div>
 </div>
 </div>
@@ -7920,8 +7920,8 @@ Validation: 1309 runů
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Naivn%C3%AD-baseline:-celkov%C3%BD-pr%C5%AFm%C4%9Br">4. Naivní baseline: celkový průměr<a class="anchor-link" href="#4.-Naivn%C3%AD-baseline:-celkov%C3%BD-pr%C5%AFm%C4%9Br">¶</a></h2><p><strong>Logika:</strong> Pro každý run ve validační sadě je predikcí průměrná hodnota <code>clear_time_ms</code> vypočítaná z celé trénovací sady.</p>
-<p><strong>Zdůvodnění:</strong> Po filtru na +16 je obtížnost konstantní, průměr tedy reprezentuje typický čas průchodu pro tuto úroveň. Jde o nejjednodušší možnou predikci bez jakékoliv informace o složení skupiny nebo ilvl hráčů.</p>
+<h2 id="4.-Naivn%C3%AD-baseline:-celkov%C3%BD-pr%C5%AFm%C4%9Br">4. Naivní baseline: celkový průměr<a class="anchor-link" href="#4.-Naivn%C3%AD-baseline:-celkov%C3%BD-pr%C5%AFm%C4%9Br">¶</a></h2><p>Pro každý run ve validační sadě je predikcí průměrná hodnota <code>clear_time_ms</code> vypočítaná z celé trénovací sady.</p>
+<p><strong>Proč celkový průměr:</strong> Po filtru na +16 je obtížnost konstantní, průměr tedy reprezentuje typický čas průchodu pro tuto úroveň. Jde o nejjednodušší možnou predikci bez jakékoliv informace o složení skupiny nebo ilvl hráčů.</p>
 </div>
 </div>
 </div>
@@ -8113,9 +8113,7 @@ Ridge regrese (avg_group_ilvl)        89.2     71.3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.-Shrnut%C3%AD">7. Shrnutí<a class="anchor-link" href="#7.-Shrnut%C3%AD">¶</a></h2><p>Ridge regrese s <code>avg_group_ilvl</code> překonává naivní baseline o 1 s (RMSE 89.2 vs 90.2). Průměrný item level skupiny tedy v rámci +16 nese malý ale reálný signál, lepší gear = rychlejší průchod.</p>
-<p><strong>Co z toho plyne:</strong>
-Po filtru na +16 odstraníme dominanci obtížnosti a <code>avg_group_ilvl</code> se stane jediným signálem v benchmarku. Zlepšení je malé, ale na rozdíl od situace se všemi klíči dohromady tu Ridge baseline skutečně překoná. Výchozí laťka pro navazující modelování je <strong>RMSE ≈ 89 s</strong> na validační sadě.</p>
+<h2 id="7.-Shrnut%C3%AD">7. Shrnutí<a class="anchor-link" href="#7.-Shrnut%C3%AD">¶</a></h2><p>Ridge regrese s <code>avg_group_ilvl</code> překonává naivní baseline o 1 s (RMSE 89.2 vs 90.2). Průměrný item level skupiny tedy v rámci +16 nese malý ale reálný signál, lepší gear = rychlejší průchod. Výchozí laťka pro navazující modelování je <strong>RMSE ≈ 89 s</strong> na validační sadě.</p>
 <p><strong>Metodicky důležité:</strong>
 Chronologický split je klíčový, náhodný split by propustil informaci o týdenních afixech mezi sadami. StandardScaler byl fitován pouze na train sadě a aplikován na validation, bez leakage.</p>
 <p><strong>Příští krok:</strong>

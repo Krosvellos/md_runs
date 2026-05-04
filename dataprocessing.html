@@ -7831,7 +7831,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="2.-Popis-dat">2. Popis dat<a class="anchor-link" href="#2.-Popis-dat">¶</a></h2><p>Načítáme <code>raiderio_runs_saron_clean.csv</code>, což je výstup skriptu <code>src/pyWowClean.py</code>. Ten provedl deduplikaci a imputaci chybějících ilvl hodnot ze surových dat scrapovaných přes Raider.IO API.</p>
-<p>Dataset filtrujeme na úroveň klíče <strong>+16</strong>. Je to nejzastoupenější úroveň (46 % runů) a filtrem odstraníme dominantní vliv obtížnosti na dobu průchodu. Výzkumná otázka se tak stává čistší: v rámci stejné obtížnosti, předpovídá složení skupiny jak rychle dungeon projdou? Časový vývoj (sezóna trvá několik týdnů) v datech zůstává zachován.</p>
+<p>Dataset filtrujeme na úroveň klíče <strong>+16</strong>. Z celkových 19 960 runů v surových datech tvoří klíč +16 přibližně 44,6 % (8 900 runů) — jde o nejzastoupenější úroveň. Filtrem odstraníme dominantní vliv obtížnosti na dobu průchodu. Výzkumná otázka se tak stává čistší: v rámci stejné obtížnosti, předpovídá složení skupiny jak rychle dungeon projdou? Časový vývoj (sezóna trvá několik týdnů) v datech zůstává zachován.</p>
 </div>
 </div>
 </div>
@@ -8213,7 +8213,13 @@ Týdenní affixy (<code>modifier_*</code>) se mění každý týden. Náhodný s
 <pre>Train         6111 runů   2026-03-27 → 2026-04-23
 Validation    1309 runů   2026-04-23 → 2026-04-25
 Test          1310 runů   2026-04-25 → 2026-04-28
-
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
 Sady uloženy do data/
 </pre>
 </div>
