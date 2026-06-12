@@ -15,6 +15,8 @@ HW2/
 ├── dataprocessing.html         # exportovaná záloha ipynb
 ├── benchmark.ipynb             # naivní baseline + Ridge benchmark na validační sadě
 ├── benchmark.html              # exportovaná záloha ipynb
+├── ukol3_evaluace.ipynb        # srovnání všech modelů, evaluace na testu, diskuze
+├── ukol3_evaluace.html         # exportovaná záloha ipynb
 ├── data/
 │   ├── train.csv               # trénovací sada (~70 %, nejstarší podle completed_at)
 │   ├── validation.csv          # validační sada (~15 %)
@@ -47,6 +49,7 @@ python src/pyWowClean.py
 ```
 * **Krok 3** spustit všechny buňky v `dataprocessing.ipynb`
 * **Krok 4** spustit všechny buňky v `benchmark.ipynb`
+* **Krok 5** spustit všechny buňky v `ukol3_evaluace.ipynb`
 
 ## Zdroj dat
 
