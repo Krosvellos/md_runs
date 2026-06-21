@@ -1,4 +1,4 @@
-# MML1 – HW2: Zpracování dat, split a benchmark
+# MML1 – HW2 + HW3: Zpracování dat, split a benchmark + trénink a vyhodnocení
 
 V rámci klíče +16, může složení skupiny (class a spec hráčů) předpovědět dobu průchodu Pit of Saron nad rámec toho, co vysvětluje průměrný item level skupiny?
 ## Popis
