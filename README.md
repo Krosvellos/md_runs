@@ -1,10 +1,16 @@
-# MML1 – HW2 + HW3: Zpracování dat, split a benchmark + trénink a vyhodnocení
+# MML1 – HW2 + HW3 + HW4: Zpracování dat, split a benchmark + trénink a vyhodnocení + návrh architektury
 
 V rámci klíče +16, může složení skupiny (class a spec hráčů) předpovědět dobu průchodu Pit of Saron nad rámec toho, co vysvětluje průměrný item level skupiny?
 ## Popis
 
 Regresní úloha postavená na datech z Raider.IO API. Každý záznam představuje jeden run (tank, healer, 3x dps) s atributy skupiny jako třída (class), specializace (spec) a item level (úroveň vybavení). 
 Cílová proměnná je `clear_time_ms`, což je skutečná doba průchodu dungeonem v milisekundách. 
+
+### Které soubory patří ke kterému úkolu
+
+* **HW2 (zpracování dat, split a benchmark):** `dataprocessing.ipynb` a `benchmark.ipynb` (+ jejich `.html` zálohy)
+* **HW3 (trénink a vyhodnocení modelů):** `ukol3_evaluace.ipynb` (+ `.html` záloha)
+* **HW4 (teoretický návrh pokročilé architektury):** `ukol4.md`
 
 ### Struktura repozitáře
 
@@ -17,6 +23,7 @@ HW2/
 ├── benchmark.html              # exportovaná záloha ipynb
 ├── ukol3_evaluace.ipynb        # srovnání všech modelů, evaluace na testu, diskuze
 ├── ukol3_evaluace.html         # exportovaná záloha ipynb
+├── ukol4.md                    # teoretický návrh pokročilé architektury (HW4)
 ├── data/
 │   ├── train.csv               # trénovací sada (~70 %, nejstarší podle completed_at)
 │   ├── validation.csv          # validační sada (~15 %)
